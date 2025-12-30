@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerceJSNTI</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-white">
+    <header class="text-center py-5">
+        <h1 class="fw-bold">My Store</h1>
+    </header>
+
+    <section class="bg-dark py-3">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center flex-wrap gap-2">
+                <input 
+                id="searchInput"
+                class="form-control form-control-sm" style="max-width:300px;" type="text" placeholder="Search for products...">
+                <select 
+                id="categorySelect"
+                class="form-select form-select-sm" style="max-width:160px;">
+                    <!-- <option>All Categories</option> -->
+                </select>
+                <input 
+                id="minPrice"
+                class="form-control form-control-sm" style="max-width:120px;" placeholder="Min Price">
+                <input
+                id="maxPrice"
+                class="form-control form-control-sm" style="max-width:120px;" placeholder="Max Price">
+                <button 
+                id="applyFilter"
+                class="btn btn-success btn-sm">Apply Filters</button>
+            </div>
+
+            <div class="d-flex justify-content-center mt-2">
+                <select class="form-select form-select-sm" style="max-width:160px;">
+                    <option>Sort by Price</option>
+                    <option>Sort by Name </option>
+                    <option>Sort by Rating</option>
+                </select>
+            </div>
+
+            <div class="text-center mt-4">
+                <div class="d-inline-block text-start">
+                    <h5 class="fw-bold">Shopping Cart</h5>
+                    <ul 
+                    id="cartItems"
+                    class="list-unstyled small">
+                        <!-- <li>Mens Cotton Jacket - $55.99 <button class="btn btn-sm btn-secondary ms-2">Remove</button></li>
+                        <li>Mens Casual Premium Slim Fit T-Shirts - $22.31 <button class="btn btn-sm btn-secondary ms-2">Remove</button></li> -->
+                    </ul>
+                    <div 
+                    id="totalQty"
+                    class="mt-2"></div>
+                    <div
+                    id="totalPrice"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container py-4">
+        <div 
+        id="products"
+        class="row g-3">
+            <!-- <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="ECommerce-JS-NTI.jpg" class="card-img-top" alt="product">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Fjallraven - Foldsack No. 1 Backpack</h6>
+                        <p class="text-muted mb-2">$109.95</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-primary btn-sm">View Details</button>
+                            <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="ECommerce-JS-NTI.jpg" class="card-img-top" alt="product">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Mens Casual Premium Slim Fit T-Shirts</h6>
+                        <p class="text-muted mb-2">$22.30</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-primary btn-sm">View Details</button>
+                            <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="ECommerce-JS-NTI.jpg" class="card-img-top" alt="product">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Mens Cotton Jacket</h6>
+                        <p class="text-muted mb-2">$55.99</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-primary btn-sm">View Details</button>
+                            <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="ECommerce-JS-NTI.jpg" class="card-img-top" alt="product">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Mens Casual Slim Fit</h6>
+                        <p class="text-muted mb-2">$15.99</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-primary btn-sm">View Details</button>
+                            <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="ECommerce-JS-NTI.jpg" class="card-img-top" alt="product">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">John Hardy Women's Legends Naga</h6>
+                        <p class="text-muted mb-2">$695</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-primary btn-sm">View Details</button>
+                            <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="ECommerce-JS-NTI.jpg" class="card-img-top" alt="product">
+                    <div class="card-body text-center">
+                        <h6 class="card-title fw-bold">Solid Gold Petite Micropave</h6>
+                        <p class="text-muted mb-2">$168</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-primary btn-sm">View Details</button>
+                            <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <nav class="d-flex justify-content-center mt-4">
+            <ul class="pagination">
+                <li class="page-item active"><a class="page-link" onclick="page1()">1</a></li>
+                <li class="page-item"><a class="page-link" onclick="page2()">2</a></li>
+                <li class="page-item"><a class="page-link" onclick="page3()">3</a></li>
+                <li class="page-item"><a class="page-link" onclick="page4()">4</a></li></ul>
+        </nav>
+    </main>
+<script src="js/main.js"></script>
+
+</body>
+</html>
